@@ -1,5 +1,5 @@
 #!/bin/sh
-source <(curl -s https://raw.githubusercontent.com/tteck/Proxmox/main/misc/build.func)
+source <(curl -s https://github.com/jhboyle201/proxmox/blob/main/install.func)
 # Copyright (c) 2021-2024 tteck
 # Author: tteck (tteckster)
 # License: MIT
