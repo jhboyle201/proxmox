@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+# !/usr/bin/env bash
 source <(curl -s https://raw.githubusercontent.com/tteck/Proxmox/main/misc/build.func)
 # Copyright (c) 2021-2024 tteck
 # Author: tteck (tteckster)
@@ -63,7 +63,7 @@ if ! dpkg -s aspnetcore-runtime-8.0 > /dev/null 2>&1; then
     apt-get update &>/dev/null
     apt-get install -y aspnetcore-runtime-8.0 &>/dev/null
     rm packages-microsoft-prod.deb
-if
+fi
 bash <(curl -fsSL https://download.technitium.com/dns/install.sh) &>/dev/null
 msg_ok "Updated Successfully"
 exit
