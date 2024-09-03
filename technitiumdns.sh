@@ -58,12 +58,12 @@ if [[ ! -d /etc/dns ]]; then msg_error "No ${APP} Installation Found!"; exit; fi
 msg_info "Updating ${APP}"
 
 if ! dpkg -s aspnetcore-runtime-8.0 > /dev/null 2>&1; then
-    wget https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-    dpkg -i packages-microsoft-prod.deb
-    apt-get update && \
-    apt-get install -y aspnetcore-runtime-8.0
+    wget -q https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb
+    dpkg -i packages-microsoft-prod.deb &>/dev/null
+    apt-get update &>/dev/null
+    apt-get install -y aspnetcore-runtime-8.0 &>/dev/null
     rm packages-microsoft-prod.deb
-fi
+if
 bash <(curl -fsSL https://download.technitium.com/dns/install.sh) &>/dev/null
 msg_ok "Updated Successfully"
 exit
